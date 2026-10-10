@@ -69,17 +69,17 @@ internal class Program
                 
             }
             
-            else if (GetText(line) == $" Событие \"{seriv.ivname}\" закрыто")
+            else if (GetText(line) == $"Событие \"{seriv.ivname}\" закрыто")
             {
                 F = false;
-                Console.WriteLine("F = 0");
+                //Console.WriteLine("F = 0");
             }
-            else if (GetLevel(line)== "Warning" && F)
+            else if (GetLevel(line)== "Warning" & F)
             {
                 seriv.ivwarning++;
                 
             }
-            else if (GetLevel(line) == "Error" && F)
+            else if (GetLevel(line) == "Error" & F)
             {
                 seriv.iverror++;
                 
@@ -114,6 +114,8 @@ internal class Program
             }
 
         }
+        //Console.WriteLine($" Событие \"{seriv.ivname}\" закрыто");
+
         Console.WriteLine($"Итоги события: {seriv.ivname}\n\n");
         Console.WriteLine($"Дата: {seriv.ivdate}");
         Console.WriteLine($"Победитель: {seriv.ivviner}");
